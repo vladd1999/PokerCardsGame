@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.backend.controller;
 
-import com.example.demo.model.*;
-import com.example.demo.service.GameService;
+import com.backend.model.*;
+import com.backend.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,16 +21,16 @@ public class GameController {
     }
 
 
-    @PostMapping(value = "set-accepted-move")
+    @PostMapping(value = "/set-accepted-move")
     @ResponseBody
     void setLastMove(@RequestBody NextAcceptedMoveParams nextAcceptedMoveParams) {
         gameService.setMove(nextAcceptedMoveParams.gameId, nextAcceptedMoveParams.informationModel);
     }
 
-    @PostMapping(value = "is-lying")
+    @PostMapping(value = "/is-lying")
     @ResponseBody
-    boolean isLying(@RequestBody int gameId) {
-        return gameService.isLying(gameId);
+    void isLying(@RequestBody IsLyingParams params) {
+        gameService.endRound(params.id);
     }
 
     @PostMapping(value = "/join")
@@ -43,6 +43,10 @@ public class GameController {
     @ResponseBody
     public GameStateModel retrieveState(@RequestBody PlayerSession playerSession) {
         return gameService.getGameSession(playerSession);
+    }
+
+    public static class IsLyingParams {
+        public int id;
     }
 
     public static class NextAcceptedMoveParams {

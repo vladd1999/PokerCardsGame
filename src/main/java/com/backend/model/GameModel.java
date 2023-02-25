@@ -1,19 +1,42 @@
-package com.example.demo.model;
+package com.backend.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameModel {
-    public static DealerCardModel dealerCardModel;
+    public DealerCardModel dealerCardModel = new DealerCardModel();
     private int id;
     private int maxPlayer = 2;
     private ArrayList<PlayerModel> playerModels;
     private ArrayList<CardModel> tableCardModels;
     private InformationModel lastInformationModel = null;
     private Integer currentPlayerId;
-    private TypeOfMove typeOfMove ;
+    private TypeOfMove typeOfMove;
+    private Long endAt = null;
 
+    public GameModel() {
+        playerModels = new ArrayList<>();
+    }
 
+    public GameModel(int id) {
+        this.id = id;
+        playerModels = new ArrayList<>();
+    }
+
+    public GameModel(int id, ArrayList<CardModel> cardModels, ArrayList<PlayerModel> playerModels) {
+        this.id = id;
+        this.tableCardModels = cardModels;
+        this.playerModels = playerModels;
+
+    }
+
+    public Long getEndAt() {
+        return endAt;
+    }
+
+    public void setEndAt(Long endAt) {
+        this.endAt = endAt;
+    }
 
     public TypeOfMove getTypeOfMove() {
         return typeOfMove;
@@ -29,21 +52,6 @@ public class GameModel {
 
     public void setCurrentPlayerId(Integer currentPlayerId) {
         this.currentPlayerId = currentPlayerId;
-    }
-
-    public GameModel() {
-        playerModels = new ArrayList<>();
-    }
-
-    public GameModel(int id) {
-        this.id=id;
-        playerModels = new ArrayList<>();
-    }
-    public GameModel(int id, ArrayList<CardModel> cardModels, ArrayList<PlayerModel> playerModels) {
-        this.id = id;
-        this.tableCardModels = cardModels;
-        this.playerModels = playerModels;
-
     }
 
     public InformationModel getLastInformation() {
@@ -74,7 +82,6 @@ public class GameModel {
     }
 
 
-
     public int getMaxPlayer() {
         return maxPlayer;
     }
@@ -87,9 +94,10 @@ public class GameModel {
         this.tableCardModels = tableCardModels;
     }
 
-    public List<PlayerModel> getPlayers() {
+    public List<PlayerModel> getPlayerModels() {
         return playerModels;
     }
+
     public void setPlayers(PlayerModel playerModel) {
         this.playerModels.add(playerModel);
     }

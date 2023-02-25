@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.backend.model;
 
 public class PlayerSession {
     private int id;

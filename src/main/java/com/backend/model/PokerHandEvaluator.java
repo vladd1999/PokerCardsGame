@@ -1,6 +1,6 @@
-package com.example.demo.model;
+package com.backend.model;
 
-import com.example.demo.utils.Suit;
+import com.backend.utils.Suit;
 
 import java.util.ArrayList;
 

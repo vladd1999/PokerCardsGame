@@ -1,7 +1,7 @@
-package com.example.demo.model;
+package com.backend.model;
 
-import com.example.demo.utils.Rank;
-import com.example.demo.utils.Suit;
+import com.backend.utils.Rank;
+import com.backend.utils.Suit;
 
 
 public class CardModel {

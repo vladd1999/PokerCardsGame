@@ -1,7 +1,8 @@
-package com.example.demo.model;
+package com.backend.model;
 
 public enum TypeOfMove {
     waiting,
     trustOrNot,
-    pickHand
+    pickHand,
+    isLying
 }

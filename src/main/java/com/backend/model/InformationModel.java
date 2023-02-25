@@ -1,19 +1,20 @@
-package com.example.demo.model;
+package com.backend.model;
 
-import com.example.demo.utils.PokerHandPower;
+import com.backend.utils.PokerHandPower;
 
 public class InformationModel {
     private PokerHandPower pokerHandPower;
     private int value;
-    private Integer secondValue;//if is 2c2c or 3c2c
-
+    private Integer secondValue;
 
     public InformationModel(PokerHandPower pokerHandPower, int value, Integer secondValue) {
         this.pokerHandPower = pokerHandPower;
         this.value = value;
         this.secondValue = secondValue;
     }
-
+    public static InformationModel copyOf(InformationModel informationModel){
+        return new InformationModel(informationModel.getPokerHandPower(),informationModel.getValue(),informationModel.getSecondValue());
+    }
     public InformationModel() {
     }
 
@@ -46,6 +47,6 @@ public class InformationModel {
                 || (this.pokerHandPower.ordinal() > actualInformation.pokerHandPower.ordinal())
                 || (this.pokerHandPower.ordinal() == actualInformation.pokerHandPower.ordinal()
                 && (this.value > actualInformation.value
-                || (this.value == actualInformation.value && this.secondValue > actualInformation.secondValue)));
+                || (this.secondValue != null &&actualInformation.secondValue != null&& this.value == actualInformation.value && this.secondValue > actualInformation.secondValue)));
     }
 }

@@ -1,7 +1,7 @@
-package com.example.demo.model;
+package com.backend.model;
 
-import com.example.demo.utils.Rank;
-import com.example.demo.utils.Suit;
+import com.backend.utils.Rank;
+import com.backend.utils.Suit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,13 +33,6 @@ public class DeckModel {
         return deck.remove(index);
     }
 
-    public int size() {
-        return deck.size();
-    }
-
-    public void clear() {
-        deck.clear();
-    }
 
     public void newDeck() {
         CardModel cardModel;
@@ -58,7 +51,6 @@ public class DeckModel {
                 deck.add(cardModel);
             }
         }
-
         this.deck = deck;
     }
 

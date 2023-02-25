@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.backend;
 
-import com.example.demo.model.CardModel;
-import com.example.demo.model.PokerHandEvaluator;
+import com.backend.model.CardModel;
+import com.backend.model.PokerHandEvaluator;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.demo.utils;
+package com.backend.utils;
 
 public enum PokerHandPower {
     HIGHCARD,
@@ -8,8 +8,7 @@ public enum PokerHandPower {
     STRAIGHT,
     FULLHOUSE,
     FOUROFAKIND,
-    STRAIGHTFLUSH,
-    ROYALFLUSH;
+    STRAIGHTFLUSH;
 
     public int getOrdinal() {
         return this.ordinal();

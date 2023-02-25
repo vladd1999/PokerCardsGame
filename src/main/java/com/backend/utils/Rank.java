@@ -1,4 +1,4 @@
-package com.example.demo.utils;
+package com.backend.utils;
 
 public enum Rank {
     TWO,
@@ -14,7 +14,4 @@ public enum Rank {
     QUEEN,
     KING,
     ACE
-
-
-
 }
